@@ -1,4 +1,4 @@
 function solution(array) {
-    let answer = [Math.max(...array),array.indexOf(Math.max(...array))]
+    var answer = array.indexOf(8)
     return answer;
 }

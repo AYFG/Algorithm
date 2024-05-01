@@ -1,13 +1,14 @@
 function solution(strings, n) {
-    var answer;
-    for(let i = 0; i <strings.length; i++){
-        strings[i] = strings[i][n] + strings[i]
-    }
+    let arr2 = [];
+    let answer = [];
+    let arr = strings.map((v,i)=>{
+      arr2.push(v[n] + v)
+    })
     
-    answer = strings.sort();
+    arr2.sort()
     
-    for (let j = 0; j < strings.length; j++){
-       answer[j] = answer[j].replace(answer[j][0],"")
-    }
+    arr2.map((v,i)=>{
+        answer.push(v.slice(1,v.length))
+    })
     return answer;
 }

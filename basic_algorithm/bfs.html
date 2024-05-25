@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const graph = {
+        A: ["B", "C"],
+        B: ["A", "D"],
+        C: ["A", "E", "F"],
+        D: ["B"],
+        E: ["C", "F"],
+        F: ["C", "E"],
+      };
+      console.log(JSON.stringify(graph));
+
+      function BFSs(graph, startNode) {
+        let queue = [];
+        let current;
+        let answer = [];
+        queue.push(startNode);
+        current = queue.shift();
+      }
+
+      const bfs = (graph, startNode) => {
+        let 다녀온곳 = []; // 탐색을 마친 노드들
+        let 목적지 = []; // 탐색해야할 노드들
+
+        목적지.push(startNode); // 노드 탐색 시작
+        console.log(`1. 목적지 탐색 시작:${목적지}`);
+        while (목적지.length !== 0) {
+          // 목적지에서 탐색해야할 노드가 남아있다면
+          const node = 목적지.shift(); // queue이기 때문에 선입선출, shift()를 사용한다.
+          console.log(
+            `2. 목적지에서 shift된걸 주웠다 중복되지 않았으면 다녀온곳에 추가한다:${node}`
+          );
+          if (!다녀온곳.includes(node)) {
+            // 해당 노드가 다녀온 곳에서 탐색된 적 없다면
+            다녀온곳.push(node);
+            console.log(`3. 다녀온곳:${다녀온곳}`);
+            목적지 = [...목적지].concat(graph[node]);
+            console.log(`4-1. shift되었던 노드 (키):${node}`);
+            console.log(`4-2. 그래프[노드] (키에 대한 밸류):${graph[node]}`);
+            console.log(`4-3. 목적지 추가:${목적지}`);
+          }
+        }
+        return 다녀온곳;
+      };
+      console.log(bfs(graph, "A"));
+
+      const b = (graph, startNode) => {
+        let visited = [];
+        let needVisit = [];
+        needVisit.push(startNode);
+        while (needVisit.length !== 0) {
+          const node = needVisit.shift();
+          if (!visited.includes(node)) {
+            visited.push(node);
+            needVisit = [...needVisit].concat(graph[node]);
+          }
+        }
+        return visited;
+      };
+      const DFS = (graph, start) => {
+        const checked = [];
+        const willCheck = [];
+
+        willCheck.push(start);
+
+        while (willCheck.length !== 0) {
+          const node = willCheck.pop();
+          if (!checked.includes(node)) {
+            checked.push(node);
+            willCheck.push(...graph[node].reverse());
+          }
+        }
+        return checked;
+      };
+
+      console.log(DFS(graph, "A"));
+    </script>
+  </body>
+</html>

@@ -136,3 +136,7 @@ function double(arr) {
 }
 // 차지하는 공간이 입력되는 배열의 크기와 비례해서 커진다
 // n number는 O(n)공간을 차지한다
+
+// 로그(Logarithms)
+// log₂(8) = 3  -->  2³ = 8
+// big O Notation 에서 log === log₂ 지수를 신경쓰지 않는다.

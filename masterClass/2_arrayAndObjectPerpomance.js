@@ -1,0 +1,26 @@
+// Big O of Objects
+// 삽입 - O(1)
+//  제거 - O(1)
+//  탐색 - O(n)
+//  접근 - O(1)
+// Object.keys - O(n)
+// Object.values - O(n)
+// Object.entries - O(n)
+// hasOwnProperty - O(1 )
+
+// Big O of Arrays
+// Array는 정렬이 되어있다.
+// 삽입 제거를 할 때 unshift , shift 는 인덱스 n개를 밀거나 당겨야하기 때문에 O(n)
+// 삽입(Insertion) - 배열 앞에 추가(unshift) = O(n) | push = O(1)
+// 삭제(Removal) - 배열 앞을 제거(shift) = O(n) | pop = O(1)
+// 검색(Searching) - O(N)
+// 접근(Access) - O(1)
+// push - O(1)
+// pop - O(1)
+// shift - O(n)
+// unshift - O(n)
+// concat - O(n)
+// slice - O(n)
+// splice - O(n)
+// sort - O(n * log n)
+// forEach/map/filter/reduce/etc. - O(n)

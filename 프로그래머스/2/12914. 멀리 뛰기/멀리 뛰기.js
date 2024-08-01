@@ -26,7 +26,7 @@ function solution(n) {
     for(let i = 1; i < n; i++){
         result = temp1 + temp2;
         temp1 = temp2;
-        temp2 = result % 1234567; // ???? return에 붙여준거랑 차이가 너무 많이 나는데 1번 테스트 케이스 통과가 안된다
+        temp2 = result% 1234567;
     }
     
     return result % 1234567;

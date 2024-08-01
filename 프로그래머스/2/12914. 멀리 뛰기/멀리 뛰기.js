@@ -24,9 +24,9 @@ function solution(n) {
 
     }
     for(let i = 1; i < n; i++){
-        result = temp1 + temp2;
+        result = temp1 % 1234567 + temp2 % 1234567
         temp1 = temp2;
-        temp2 = result% 1234567;
+        temp2 = result
     }
     
     return result % 1234567;

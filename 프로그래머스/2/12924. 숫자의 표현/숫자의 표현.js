@@ -31,7 +31,6 @@ function solution(n) {
     var answer = 0;
     let count = 0;
     for(let i = 0; i <= n; i++){
-        // console.log(i)
         for(let j = i + 1; j <= n; j++){
             count += j
             
@@ -39,7 +38,6 @@ function solution(n) {
                 count = 0;
                 break;
             }
-            
             if(count == n){
                 count = 0;
                 answer += 1;

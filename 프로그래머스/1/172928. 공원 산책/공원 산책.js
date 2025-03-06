@@ -33,6 +33,7 @@ function solution(park, routes) {
         while(step < distance){
             x += directions[dir][0];
             y += directions[dir][1];
+            // x와y는 음수가 되면 안된다. x와y는 공원의 최대 크기보다 클 수 없다. 이동한 위치에 X가 있으면 안된다.
             if(x < 0 || y < 0 || x >= parkRow || y >= parkColumns || park[x][y] == "X"){
                 break;
             }

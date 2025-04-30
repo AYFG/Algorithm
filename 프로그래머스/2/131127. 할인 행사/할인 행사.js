@@ -10,7 +10,6 @@ number 총합으로 처음부터 number까지 slice해서 비교하고
 없으면 한 칸 앞으로
 있으면 answer += 1;
 
-배열과 배열
 */
 function solution(want, number, discount) {
     var answer = 0;

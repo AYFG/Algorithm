@@ -34,7 +34,8 @@ function solution(cacheSize, cities) {
     for(let i of cities){
         i = i.toLowerCase();
         if(cache.includes(i)){
-            cache.splice(cache.indexOf(i),1);
+            // cache.splice(cache.indexOf(i),1);
+            cache = cache.filter((v)=> v !== i)
             cache.push(i);
             answer += 1;
         }else{

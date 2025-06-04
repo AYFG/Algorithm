@@ -25,7 +25,7 @@ cities = ["Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo"
 */
 function solution(cacheSize, cities) {
     var answer = 0;
-    let temp = [];
+    let cache = [];
     
     if(cacheSize === 0){
         return answer = cities.length * 5
@@ -33,16 +33,16 @@ function solution(cacheSize, cities) {
     
     for(let i of cities){
         i = i.toLowerCase();
-        if(temp.includes(i)){
-            temp.splice(temp.indexOf(i),1);
-            temp.push(i);
+        if(cache.includes(i)){
+            cache.splice(cache.indexOf(i),1);
+            cache.push(i);
             answer += 1;
         }else{
-            if(temp.length < cacheSize){
-                temp.push(i);
+            if(cache.length < cacheSize){
+                cache.push(i);
             }else{
-                temp.shift();
-                temp.push(i);
+                cache.shift();
+                cache.push(i);
             }
             answer += 5;
         }        
